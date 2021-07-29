@@ -50,3 +50,6 @@ TagManager:
   - name: Attackers
     uniqueID: 3247556567
     locked: 0
+  - name: Foreground
+    uniqueID: 2006132369
+    locked: 0
