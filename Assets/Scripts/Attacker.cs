@@ -36,7 +36,7 @@ public class Attacker : MonoBehaviour, IHealth
     public void DealDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log($"{name} took {damage} damage; now has {currentHealth} health");
+        // Debug.Log($"{name} took {damage} damage; now has {currentHealth} health");
         if (currentHealth <= 0)
         {
             Die();
@@ -45,7 +45,7 @@ public class Attacker : MonoBehaviour, IHealth
 
     void Die()
     {
-        Debug.Log($"{name} is dead");
+        // Debug.Log($"{name} is dead");
         TriggerDeathVFX();
         Destroy(gameObject);
 	}

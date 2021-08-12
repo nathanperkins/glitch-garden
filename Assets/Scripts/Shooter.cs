@@ -14,7 +14,7 @@ public class Shooter : MonoBehaviour
 
     public void Fire()
 	{
-        Debug.Log("Fire!");
+        // Debug.Log("Fire!");
         var projectile = Instantiate(
             projectilePrefab,
             gun.transform.position,
