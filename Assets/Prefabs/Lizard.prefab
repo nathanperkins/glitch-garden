@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5160118794068232673}
   - component: {fileID: 5160118794068232672}
   - component: {fileID: 5160118794068232679}
+  - component: {fileID: 5821731358485902154}
   m_Layer: 0
   m_Name: Lizard
   m_TagString: Untagged
@@ -115,4 +116,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9041f06b669c44c6db61e50d0baac718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0.8
+  startingHealth: 2
+  currentSpeed: 0
+  currentHealth: 0
+--- !u!61 &5821731358485902154
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160118794068232675}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.50660074, y: -0.28519747}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.51, y: 1.86}
+    newSize: {x: 0.83, y: 0.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8063204, y: 0.88432425}
+  m_EdgeRadius: 0
