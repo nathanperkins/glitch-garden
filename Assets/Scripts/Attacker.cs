@@ -4,6 +4,12 @@ public class Attacker : MonoBehaviour, IHealth
 {
     [SerializeField] int startingHealth;
 
+    #region Prefabs
+    [Header("Prefabs")]
+    [SerializeField] ParticleSystem deathVFX;
+    [SerializeField] float deathVFXMaxLifetime;
+    #endregion
+
     #region State
     [Header("State")]
     [SerializeField] float currentSpeed;
@@ -40,6 +46,14 @@ public class Attacker : MonoBehaviour, IHealth
     void Die()
     {
         Debug.Log($"{name} is dead");
+        TriggerDeathVFX();
         Destroy(gameObject);
+	}
+
+    void TriggerDeathVFX()
+    { 
+        if (!deathVFX) { return; }
+        var deathVFXObject = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        Destroy(deathVFXObject, deathVFXMaxLifetime);
 	}
 }
