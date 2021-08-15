@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
+  health: 4
 --- !u!61 &3942936102065279413
 BoxCollider2D:
   m_ObjectHideFlags: 0

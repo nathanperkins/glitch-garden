@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour, IHealth
 {
+    #region Stats
+    [Header("Stats")]
     [SerializeField] int startingHealth;
+    [SerializeField] int damagePerHit;
+    #endregion
 
     #region Prefabs
     [Header("Prefabs")]
@@ -16,8 +20,12 @@ public class Attacker : MonoBehaviour, IHealth
     [SerializeField] int currentHealth;
     #endregion
 
+    Animator animator;
+    Defender currentTarget;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
         currentSpeed = 0;
         currentHealth = startingHealth;
     }
@@ -26,7 +34,16 @@ public class Attacker : MonoBehaviour, IHealth
     void Update()
     {
         transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
+        UpdateAnimationState();
     }
+
+	private void UpdateAnimationState()
+    { 
+        if (!currentTarget)
+        {
+            animator.SetBool("IsAttacking", false);
+		}
+	}
 
     public void SetMovementSpeed(float speed)
     {
@@ -55,5 +72,27 @@ public class Attacker : MonoBehaviour, IHealth
         if (!deathVFX) { return; }
         var deathVFXObject = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(deathVFXObject, deathVFXMaxLifetime);
+	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Defender defender = collision.GetComponent<Defender>();
+        if (defender != null) { Attack(defender); }
+    }
+
+    private void Attack(Defender defender)
+    {
+		currentTarget = defender;
+		animator.SetBool("IsAttacking", true);
+	}
+
+    public void StrikeCurrentTarget()
+    { 
+        if (!currentTarget)
+        { 
+            animator.SetBool("IsAttacking", false);
+            return;
+		}
+        currentTarget.DealDamage(damagePerHit);
 	}
 }
