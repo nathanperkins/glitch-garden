@@ -17,21 +17,20 @@ public class StarDisplay : MonoBehaviour
         text.text = stars.ToString();
     }
 
+    public bool HaveEnoughStars(int amount)
+    {
+        return stars >= amount;
+	}
+
     public void AddStars(int amount)
     {
         stars += amount;
         UpdateDisplay();
     }
 
-    public bool SpendStars(int amount)
+    public void SpendStars(int amount)
     {
-        if (amount > stars)
-        {
-            return false;
-        }
-
         stars -= amount;
         UpdateDisplay();
-        return true;
     }
 }
