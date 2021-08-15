@@ -7,10 +7,6 @@ public class Shooter : MonoBehaviour
 
     [Header("Projectile")]
     [SerializeField] GameObject gun;
-    [Range(0.5f, 5)]
-    [SerializeField] float projectileVelocity;
-    [Range(0, 720)]
-    [SerializeField] float projectileRotation;
 
     Animator animator;
     Spawner spawner;
@@ -53,15 +49,9 @@ public class Shooter : MonoBehaviour
 
     public void Fire()
     {
-        // Debug.Log("Fire!");
-        var projectile = Instantiate(
-            projectilePrefab,
-            gun.transform.position,
-            Quaternion.identity
-        );
-
-        var body = projectile.GetComponent<Rigidbody2D>();
-        body.velocity = Vector2.right * projectileVelocity;
-        body.angularVelocity = -projectileRotation;
+        Instantiate(
+             projectilePrefab,
+             gun.transform.position,
+             Quaternion.identity);
     }
 }
