@@ -10,18 +10,16 @@ public class Spawner : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(Spawn());
-    }
-
-
-    IEnumerator Spawn() {
+    IEnumerator Start() {
         while(true) { 
 			float wait = Random.Range(minSpawnDelay, maxSpawnDelay);
             yield return new WaitForSeconds(wait);
-
-            Instantiate(attackerPrefab, transform);
+            SpawnAttacker();
 		}
+	}
+
+    private void SpawnAttacker()
+    { 
+            Attacker attacker = Instantiate(attackerPrefab, transform);
 	}
 }
