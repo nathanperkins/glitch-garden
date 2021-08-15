@@ -91,8 +91,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5160118794068232678}
+  - component: {fileID: -782800026380808698}
   - component: {fileID: 5160118794068232672}
-  - component: {fileID: 5160118794068232679}
   - component: {fileID: 5821731358485902154}
   - component: {fileID: 125656843251225449}
   m_Layer: 0
@@ -117,6 +117,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-782800026380808698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160118794068232675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec07a27296884e1d84aa61f3cdfa95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 6
+  damagePerHit: 2
+  deathVFX: {fileID: 198416179944302826, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
+  deathVFXMaxLifetime: 1
+  currentSpeed: 0
+  currentHealth: 0
 --- !u!95 &5160118794068232672
 Animator:
   serializedVersion: 3
@@ -136,24 +154,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5160118794068232679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5160118794068232675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9041f06b669c44c6db61e50d0baac718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 6
-  damagePerHit: 2
-  deathVFX: {fileID: 198416179944302826, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
-  deathVFXMaxLifetime: 1
-  currentSpeed: 0
-  currentHealth: 0
 --- !u!61 &5821731358485902154
 BoxCollider2D:
   m_ObjectHideFlags: 0

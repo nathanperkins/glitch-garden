@@ -74,13 +74,7 @@ public class Attacker : MonoBehaviour, IHealth
         Destroy(deathVFXObject, deathVFXMaxLifetime);
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Defender defender = collision.GetComponent<Defender>();
-        if (defender != null) { Attack(defender); }
-    }
-
-    private void Attack(Defender defender)
+    protected void Attack(Defender defender)
     {
 		currentTarget = defender;
 		animator.SetBool("IsAttacking", true);
