@@ -5,7 +5,7 @@ public class DefenderButton : MonoBehaviour
     [SerializeField] Defender prefab;
 
     private Color selectedColor = Color.white;
-    private Color unselectedColor = Color.gray;
+    private Color unselectedColor = Color.black;
 
     private void Awake()
     {
