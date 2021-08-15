@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class GameArea : MonoBehaviour
 {
-    [SerializeField] GameObject defender;
+    public static GameArea Instance;
+    public GameObject defender;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void OnMouseDown()
     {
