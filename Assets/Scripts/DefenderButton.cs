@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DefenderButton : MonoBehaviour
 {
-    [SerializeField] GameObject defenderPrefab;
+    [SerializeField] Defender prefab;
 
     private Color selectedColor = Color.white;
     private Color unselectedColor = Color.gray;
@@ -16,7 +16,7 @@ public class DefenderButton : MonoBehaviour
     {
         UnselectAll();
         GetComponent<SpriteRenderer>().color = selectedColor;
-        GameArea.Instance.defender = defenderPrefab;
+        GameArea.Instance.SetSelectedDefender(prefab);
     }
 
     private void UnselectAll()
