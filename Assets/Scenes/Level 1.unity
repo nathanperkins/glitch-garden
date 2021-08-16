@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecbe8ab0784d469da3a77f5aa16f8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4153043197043672437, guid: ce809a3f7686a40a2b788b261f1e5f9b, type: 3}
+  prefab: {fileID: -883020189527600515, guid: ce809a3f7686a40a2b788b261f1e5f9b, type: 3}
 --- !u!61 &134855788
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -335,6 +335,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7340089302772283656, guid: bef195b0b2d49418aa65bee6ab7d9b7a, type: 3}
+      propertyPath: attackerPrefab
+      value: 
+      objectReference: {fileID: 4424612884302697540, guid: 6295b3e976a984a65aacb919ff03b92e, type: 3}
     - target: {fileID: 7340089302772283657, guid: bef195b0b2d49418aa65bee6ab7d9b7a, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1160,6 +1164,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7340089302772283656, guid: bef195b0b2d49418aa65bee6ab7d9b7a, type: 3}
+      propertyPath: attackerPrefab
+      value: 
+      objectReference: {fileID: 4424612884302697540, guid: 6295b3e976a984a65aacb919ff03b92e, type: 3}
     - target: {fileID: 7340089302772283657, guid: bef195b0b2d49418aa65bee6ab7d9b7a, type: 3}
       propertyPath: m_RootOrder
       value: 6
