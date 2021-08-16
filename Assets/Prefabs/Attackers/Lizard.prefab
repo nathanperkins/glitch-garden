@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 6
   damagePerHit: 2
+  movementSpeed: 1
   deathVFX: {fileID: 198416179944302826, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
   deathVFXMaxLifetime: 1
   currentSpeed: 0

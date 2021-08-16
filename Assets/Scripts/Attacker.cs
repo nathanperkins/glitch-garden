@@ -6,6 +6,7 @@ public class Attacker : MonoBehaviour, IHealth
     [Header("Stats")]
     [SerializeField] int startingHealth;
     [SerializeField] int damagePerHit;
+    [SerializeField] float movementSpeed;
     #endregion
 
     #region Prefabs
@@ -22,18 +23,28 @@ public class Attacker : MonoBehaviour, IHealth
 
     Animator animator;
     Defender currentTarget;
+    Rigidbody2D rigidBody;
+
+    void Awake()
+    { 
+        animator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
+	}
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        currentSpeed = 0;
+        StopMoving();
         currentHealth = startingHealth;
     }
+
+    void FixedUpdate()
+    { 
+        rigidBody.velocity = Vector2.left * currentSpeed;
+	}
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
         UpdateAnimationState();
     }
 
@@ -45,9 +56,14 @@ public class Attacker : MonoBehaviour, IHealth
 		}
 	}
 
-    public void SetMovementSpeed(float speed)
+    public void StopMoving()
     {
-        currentSpeed = speed;
+        currentSpeed = 0;
+    }
+
+    public void StartMoving()
+    {
+        currentSpeed = movementSpeed;
     }
 
     public void DealDamage(int damage)
