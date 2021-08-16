@@ -155,6 +155,7 @@ MonoBehaviour:
   deathVFXMaxLifetime: 1
   currentSpeed: 0
   currentHealth: 0
+  jumpSpeed: 3
 --- !u!50 &7269263788004263744
 Rigidbody2D:
   serializedVersion: 4

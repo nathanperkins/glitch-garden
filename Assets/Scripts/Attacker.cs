@@ -17,11 +17,11 @@ public class Attacker : MonoBehaviour, IHealth
 
     #region State
     [Header("State")]
-    [SerializeField] float currentSpeed;
+    [SerializeField] protected float currentSpeed;
     [SerializeField] int currentHealth;
     #endregion
 
-    Animator animator;
+    protected Animator animator;
     Defender currentTarget;
     Rigidbody2D rigidBody;
 
