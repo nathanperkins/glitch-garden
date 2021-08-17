@@ -3,20 +3,21 @@ using UnityEngine;
 public class Defender : MonoBehaviour, IHealth
 {
     [SerializeField] int cost = 100;
-    [SerializeField] int health = 1;
+    [SerializeField] protected int health = 1;
 
     public int GetStarCost() { return cost; }
 
-    public void DealDamage(int damage) {
+    public virtual void DealDamage(int damage)
+    {
         health -= damage;
         if (health <= 0)
         {
-            Destroy(gameObject);
-		}
-	}
+            Die();
+        }
+    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void Die()
     {
-        Debug.Log($"Triggered at {name}");
+        Destroy(gameObject);
     }
 }
